@@ -21,9 +21,7 @@ $(document).click(function(e) {
     e.preventDefault();
     $('button.navbar-toggle').trigger('click');
   }
-});
-
-$(document).keyup(function(e) {
+}).keyup(function(e) {
   if (e.keyCode == 27 && $('body').hasClass('out')) {
     $('button.navbar-toggle').trigger('click');
   } 
