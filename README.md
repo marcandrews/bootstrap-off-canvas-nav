@@ -1,2 +1,2 @@
-# Bootstrap Off Canvas
+# Bootstrap Off Canvas Nav
 Off canvas nav for Bootstrap
