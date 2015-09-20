@@ -1,2 +1,2 @@
-# Bootstrap-Offcanvas-Nav
-Offcanvas nav for Bootstrap
+# Bootstrap Off Canvas
+Off canvas nav for Bootstrap
