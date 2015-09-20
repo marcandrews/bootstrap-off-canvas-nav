@@ -1,0 +1,157 @@
+/*!
+ * Bootstrap Off Canvas Nav (http://github.com/marcandrews/bootstrap-off-canvas-nav)
+ * Copyright (c) 2015 Marc Andrews
+ * Licensed under the MIT license
+ */
+
+@media (max-width: 768px) {
+  body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
+    backface-visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0s;
+  }
+
+  body.out {
+    left: -300px;
+    right: 300px;
+    overflow: hidden;
+    transition-delay: 0.3s;
+  }
+  
+  body.out.left {
+    left: 300px;
+    right: -300px;
+  }
+
+  .container-fluid > .navbar-collapse,
+  .container-fluid > .navbar-header,
+  .container > .navbar-collapse,
+  .container > .navbar-header {
+    margin: 0;
+  }
+
+  nav.navbar-fixed-top {
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0s;
+  }
+
+  nav.navbar-fixed-top.out {
+    transform: translate3d(-300px,0,0);
+    transition-delay: 0.3s;
+  }
+
+  nav .navbar-nav {
+    margin: 0 -15px 7.5px -15px;
+  }
+
+  .navbar-toggle {
+    transition: all 500ms ease-in-out;
+  }
+  
+  .out .navbar-toggle {
+    background-color: #ddd;
+  }
+  
+  .navbar-toggle .icon-bar {
+    transition: all 500ms ease-in-out;
+  }
+
+  .navbar-toggle:focus .icon-bar:nth-of-type(2),
+  .out .navbar-toggle .icon-bar:nth-of-type(2) {
+    transform: translate3d(0,6px,0) rotate(45deg);
+  }
+
+  .navbar-toggle:focus .icon-bar:nth-of-type(3),
+  .out .navbar-toggle .icon-bar:nth-of-type(3) {
+    opacity: 0;
+  }
+
+  .navbar-toggle:focus .icon-bar:nth-of-type(3),
+  .out .navbar-toggle .icon-bar:nth-of-type(4) {
+    transform: translate3d(0,-6px,0) rotate(-45deg);
+  }
+  
+  nav .navbar-collapse {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    bottom: 0;
+    z-index: 10000;
+    width: 300px;
+    height: 100vh !important;
+    margin: 0;
+    background-color: inherit;
+    border: none;
+    box-shadow: none;
+    border-left: 1px solid #e7e7e7;
+    transition: all 0.3s ease-in-out;
+  }
+
+  nav.navbar-fixed-top .navbar-collapse {
+    right: -300px !important;
+    max-height: none;
+  }
+  
+  nav .navbar-collapse.left {
+    left: -300px;
+    right: auto;
+    border: none;
+    border-right: 1px solid #e7e7e7;
+  }
+
+  nav .navbar-collapse.in {
+    box-shadow: -10px 0px 50px 0px rgba(0,0,0,0.75);
+    transform: translate3d(-300px,0,0);
+  }
+  
+  nav .navbar-collapse.in.left {
+    box-shadow: 10px 0px 50px 0px rgba(0,0,0,0.75);
+    transform: translate3d(300px,0,0);
+  }
+
+  nav .navbar-collapse .dropdown > .dropdown-menu,
+  nav .navbar-collapse .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu {
+    display: block !important;
+    position: static;
+    float: none;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+  }
+
+  nav .navbar-collapse .dropdown .dropdown-menu li a,
+  nav .navbar-collapse .dropdown .dropdown-menu li.dropdown-header {
+    padding: 5px 15px 5px 25px;
+    color: rgb(119, 119, 119);
+  }
+
+  nav .navbar-collapse .dropdown.open .dropdown-menu,
+  nav .navbar-collapse .dropdown.open .dropdown-menu > .dropdown-submenu.open > .dropdown-menu {
+    max-height: 100vh;
+  }
+
+  nav .dropdown-toggle > .caret {
+    transform: rotate(0) !important;
+  }
+  
+  nav .open > .dropdown-toggle > .caret {
+    transform: rotate(180deg) !important;
+  }
+  
+  nav .navbar-form {
+    margin-top: 0;
+    margin-bottom: 0;
+    border: none;
+    box-shadow: none;
+  }
+
+}
