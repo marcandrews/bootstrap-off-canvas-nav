@@ -27,7 +27,7 @@ Add ```bootstrap-off-canvas-nav.js``` to your HTML document after your ```bootst
 
 ## Options
 
-For a left-side off-canvas nav, add ```off-canvas-nav-left"``` class to your ```<body>``` tag:
+For a left-side off-canvas nav, add ```off-canvas-nav-left``` class to your ```<body>``` tag:
 
 ```html
 <body class="off-canvas-nav-left">
