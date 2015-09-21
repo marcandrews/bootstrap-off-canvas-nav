@@ -17,7 +17,7 @@ Add ```bootstrap-off-canvas-nav.css``` from the [src](https://github.com/marcand
 <link rel="stylesheet" href="bootstrap-off-canvas-nav.css"/>
 ```
 
-Add ```bootstrap-off-canvas-nav.js``` from the [src](https://github.com/marcandrews/bootstrap-off-canvas-nav/tree/master/src) folder to your HTML document after your ```bootstrap.js```:
+Add ```bootstrap-off-canvas-nav.js``` from the [src](https://github.com/marcandrews/bootstrap-off-canvas-nav/tree/master/src) folder to your HTML document after your ```jquery.js``` and ```bootstrap.js```:
 
 ```html
 <script src="bootstrap-off-canvas-nav.js"></script>
