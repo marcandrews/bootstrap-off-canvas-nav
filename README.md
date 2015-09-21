@@ -1,6 +1,6 @@
 # Bootstrap Off-Canvas Nav
 
-Super simple, super easy off-canvas nav for Bootstrap, requiring no additional markup to default Bootstrap navbar semantics.
+<img align="right" src="https://raw.githubusercontent.com/marcandrews/bootstrap-off-canvas-nav/master/doc/preview.gif">Super simple, super easy off-canvas nav for Bootstrap, requiring no additional markup to default Bootstrap navbar semantics.
 
 ## Features
 * compatible with fixed and static navbars
