@@ -11,9 +11,12 @@
     left: 0;
     right: 0;
     overflow-x: hidden;
-    backface-visibility: hidden;
-    transition: all 0.3s ease-in-out;
-    transition-delay: 0s;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
   }
 
   body.out {
@@ -34,17 +37,22 @@
   }
   
   nav.navbar-fixed-top {
-    transition: all 0.3s ease-in-out;
-    transition-delay: 0s;
+    -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
   }
 
   nav.navbar-fixed-top.out {
-    transform: translate3d(-300px,0,0);
+    -webkit-transform: translate3d(-300px,0,0);
+            transform: translate3d(-300px,0,0);
   }
 
   body.off-canvas-nav-left nav.navbar-fixed-top.out {
-    transform: translate3d(300px,0,0);
-    transition-delay: 0.3s;
+    -webkit-transform: translate3d(300px,0,0);
+            transform: translate3d(300px,0,0);
+    -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
   }
   
   nav .navbar-nav {
@@ -52,7 +60,8 @@
   }
 
   nav .navbar-toggle {
-    transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease-in-out;
+            transition: all 500ms ease-in-out;
   }
   
   body.out nav .navbar-toggle {
@@ -66,19 +75,23 @@
   }
   
   nav .navbar-toggle .icon-bar {
-    transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease-in-out;
+            transition: all 500ms ease-in-out;
   }
 
   body.out nav .navbar-toggle .icon-bar:nth-of-type(2) {
-    transform: translate3d(0,6px,0) rotate(45deg);
+    -webkit-transform: translate3d(0,6px,0) rotate(45deg);
+            transform: translate3d(0,6px,0) rotate(45deg);
   }
 
   body.out nav .navbar-toggle .icon-bar:nth-of-type(3) {
     opacity: 0;
+    filter: alpha(opacity=0);
   }
 
   body.out nav .navbar-toggle .icon-bar:nth-of-type(4) {
-    transform: translate3d(0,-6px,0) rotate(-45deg);
+    -webkit-transform: translate3d(0,-6px,0) rotate(-45deg);
+            transform: translate3d(0,-6px,0) rotate(-45deg);
   }
   
   nav .navbar-collapse {
@@ -95,12 +108,14 @@
     border: none;
     box-shadow: none;
     border-left: 1px solid #e7e7e7;
-    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
   }
  
   body.out nav .navbar-collapse {
     box-shadow: -10px 0px 50px 0px rgba(0,0,0,0.75);
-    transform: translate3d(-300px,0,0);
+    -webkit-transform: translate3d(-300px,0,0);
+            transform: translate3d(-300px,0,0);
   }
   
   nav.navbar-fixed-top .navbar-collapse {
@@ -110,7 +125,9 @@
 
   body.out nav.navbar-fixed-top .navbar-collapse {
     box-shadow: -10px 0px 50px 0px rgba(0,0,0,0.75);
-    transform: none;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
   }
   
   body.off-canvas-nav-left nav .navbar-collapse {
@@ -122,12 +139,15 @@
 
   body.off-canvas-nav-left.out nav .navbar-collapse {
     box-shadow: 10px 0px 50px 0px rgba(0,0,0,0.75);
-    transform: translate3d(300px,0,0);
+    -webkit-transform: translate3d(300px,0,0);
+            transform: translate3d(300px,0,0);
   }
 
   body.off-canvas-nav-left.out nav.navbar-fixed-top .navbar-collapse {
     box-shadow: 10px 0px 50px 0px rgba(0,0,0,0.75);
-    transform: none;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
   }
   
   nav .navbar-collapse .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
@@ -145,7 +165,8 @@
     border: none;
     box-shadow: none;
     overflow: hidden;
-    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+            transition: all .5s ease-in-out;
   }
 
   nav .navbar-collapse .dropdown .dropdown-menu li a,
@@ -160,11 +181,15 @@
   }
 
   nav .dropdown-toggle>.caret {
-    transform: rotate(0) !important;
+    -webkit-transform: rotate(0) !important;
+        -ms-transform: rotate(0) !important;
+            transform: rotate(0) !important;
   }
   
   nav .open>.dropdown-toggle>.caret {
-    transform: rotate(180deg) !important;
+    -webkit-transform: rotate(180deg) !important;
+        -ms-transform: rotate(180deg) !important;
+            transform: rotate(180deg) !important;
   }
   
   nav .navbar-form {
