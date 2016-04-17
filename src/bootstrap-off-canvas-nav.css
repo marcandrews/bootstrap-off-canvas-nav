@@ -1,10 +1,17 @@
 /*!
- * Bootstrap Off-Canvas Nav (http://github.com/marcandrews/bootstrap-off-canvas-nav)
- * Copyright (c) 2015 Marc Andrews
- * Licensed under the MIT license
- */
+* Bootstrap Off-Canvas Nav (http://github.com/marcandrews/bootstrap-off-canvas-nav)
+* Copyright (c) 2015 Marc Andrews
+* Licensed under the MIT license
+*/
 
 @media (max-width: 767px) {
+
+  html.out {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 
   body {
     position: absolute;
@@ -12,11 +19,13 @@
     right: 0;
     overflow-x: hidden;
     -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+    backface-visibility: hidden;
     -webkit-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition-property: left, right, -webkit-transform;
+    transition-property: left, right, transform;
     -webkit-transition-delay: 0s;
-            transition-delay: 0s;
+    transition-delay: 0s;
   }
 
   body.out {
@@ -24,7 +33,7 @@
     right: 300px;
     overflow: hidden;
   }
-  
+
   body.off-canvas-nav-left.out {
     left: 300px;
     right: -300px;
@@ -35,53 +44,44 @@
     margin-left: 0;
     margin-right: 0;
   }
-  
+
   nav.navbar-fixed-top {
     -webkit-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition-property: left, right, -webkit-transform;
+    transition-property: left, right, transform;
     -webkit-transition-delay: 0s;
-            transition-delay: 0s;
+    transition-delay: 0s;
   }
 
   nav.navbar-fixed-top.out {
     -webkit-transform: translate3d(-300px,0,0);
-            transform: translate3d(-300px,0,0);
+    transform: translate3d(-300px,0,0);
   }
 
   body.off-canvas-nav-left nav.navbar-fixed-top.out {
     -webkit-transform: translate3d(300px,0,0);
-            transform: translate3d(300px,0,0);
-    -webkit-transition-delay: 0.3s;
-            transition-delay: 0.3s;
+    transform: translate3d(300px,0,0);
+    -webkit-transition-delay: 0.15s;
+    transition-delay: 0.15s;
   }
-  
+
   nav .navbar-nav {
     margin: 0 -15px 7.5px -15px;
   }
 
-  nav .navbar-toggle {
-    -webkit-transition: all 500ms ease-in-out;
-            transition: all 500ms ease-in-out;
-  }
-  
   body.out nav .navbar-toggle {
     background-color: #ddd;
   }
-  
-  body.off-canvas-nav-left nav .navbar-toggle {
-    float: left;
-	margin-left: 15px;
-	margin-right: 0;
-  }
-  
+
   nav .navbar-toggle .icon-bar {
     -webkit-transition: all 500ms ease-in-out;
-            transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
   }
 
   body.out nav .navbar-toggle .icon-bar:nth-of-type(2) {
     -webkit-transform: translate3d(0,6px,0) rotate(45deg);
-            transform: translate3d(0,6px,0) rotate(45deg);
+    transform: translate3d(0,6px,0) rotate(45deg);
   }
 
   body.out nav .navbar-toggle .icon-bar:nth-of-type(3) {
@@ -91,9 +91,9 @@
 
   body.out nav .navbar-toggle .icon-bar:nth-of-type(4) {
     -webkit-transform: translate3d(0,-6px,0) rotate(-45deg);
-            transform: translate3d(0,-6px,0) rotate(-45deg);
+    transform: translate3d(0,-6px,0) rotate(-45deg);
   }
-  
+
   nav .navbar-collapse {
     display: block !important;
     position: fixed;
@@ -104,32 +104,39 @@
     width: 300px;
     height: 100vh !important;
     margin: 0;
-    background-color: inherit;
+    background-color: #fff;
     border: none;
     box-shadow: none;
     border-left: 1px solid #e7e7e7;
+    opacity: 0;
+    filter: alpha(opacity=0);
     -webkit-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition-property: left, right, opacity, -webkit-transform;
+    transition-property: left, right, opacity, transform;
   }
- 
+  body.out .navbar-collapse { opacity: 1; filter: alpha(opacity=100); }
+
+  nav .navbar-nav { z-index: 10010; }
+
   body.out nav .navbar-collapse {
     box-shadow: -10px 0px 50px 0px rgba(0,0,0,0.75);
     -webkit-transform: translate3d(-300px,0,0);
-            transform: translate3d(-300px,0,0);
+    transform: translate3d(-300px,0,0);
   }
-  
+
   nav.navbar-fixed-top .navbar-collapse {
-	right: -300px !important;
+    right: -300px !important;
     max-height: none;
   }
 
   body.out nav.navbar-fixed-top .navbar-collapse {
     box-shadow: -10px 0px 50px 0px rgba(0,0,0,0.75);
     -webkit-transform: none;
-        -ms-transform: none;
-            transform: none;
+    -ms-transform: none;
+    transform: none;
   }
-  
+
   body.off-canvas-nav-left nav .navbar-collapse {
     left: -300px;
     right: auto;
@@ -140,18 +147,18 @@
   body.off-canvas-nav-left.out nav .navbar-collapse {
     box-shadow: 10px 0px 50px 0px rgba(0,0,0,0.75);
     -webkit-transform: translate3d(300px,0,0);
-            transform: translate3d(300px,0,0);
+    transform: translate3d(300px,0,0);
   }
 
   body.off-canvas-nav-left.out nav.navbar-fixed-top .navbar-collapse {
     box-shadow: 10px 0px 50px 0px rgba(0,0,0,0.75);
     -webkit-transform: none;
-        -ms-transform: none;
-            transform: none;
+    -ms-transform: none;
+    transform: none;
   }
-  
+
   nav .navbar-collapse .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
-      background-color: #eee !important;
+    background-color: #eee !important;
   }
 
   nav .navbar-collapse .dropdown>.dropdown-menu,
@@ -166,7 +173,7 @@
     box-shadow: none;
     overflow: hidden;
     -webkit-transition: all .5s ease-in-out;
-            transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
   }
 
   nav .navbar-collapse .dropdown .dropdown-menu li a,
@@ -182,16 +189,16 @@
 
   nav .dropdown-toggle>.caret {
     -webkit-transform: rotate(0) !important;
-        -ms-transform: rotate(0) !important;
-            transform: rotate(0) !important;
+    -ms-transform: rotate(0) !important;
+    transform: rotate(0) !important;
   }
-  
+
   nav .open>.dropdown-toggle>.caret {
     -webkit-transform: rotate(180deg) !important;
-        -ms-transform: rotate(180deg) !important;
-            transform: rotate(180deg) !important;
+    -ms-transform: rotate(180deg) !important;
+    transform: rotate(180deg) !important;
   }
-  
+
   nav .navbar-form {
     margin-top: 0;
     margin-bottom: 0;

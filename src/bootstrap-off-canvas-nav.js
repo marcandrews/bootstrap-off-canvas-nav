@@ -5,8 +5,9 @@
  */
 
 $(function() {
-  $('button.navbar-toggle').click(function(){ 
-    $('body').toggleClass('out');
+
+  $('button.navbar-toggle').click(function(e){
+    $('html, body').toggleClass('out');
     $('nav.navbar-fixed-top').toggleClass('out');
     if ($('body').hasClass('out')) {
       $(this).focus();
@@ -14,15 +15,20 @@ $(function() {
       $(this).blur();
     }
   });
-});
 
-$(document).click(function(e) {
-  if (!$(e.target).closest('.navbar-collapse, button.navbar-toggle').length && $('body').hasClass('out')) {
-    e.preventDefault();
-    $('button.navbar-toggle').trigger('click');
-  }
-}).keyup(function(e) {
-  if (e.keyCode == 27 && $('body').hasClass('out')) {
-    $('button.navbar-toggle').trigger('click');
-  } 
+  $('body').on({
+    'click touchstart': function (e) {
+      if ($('body').hasClass('out') && !$(e.target).closest('.navbar-collapse, button.navbar-toggle').length) {
+        e.preventDefault();
+        $('button.navbar-toggle').trigger('click');
+        $('button.navbar-toggle').blur();
+      }
+    },
+    keyup: function (e) {
+      if (e.keyCode == 27 && $('body').hasClass('out')) {
+        $('button.navbar-toggle').trigger('click');
+      }
+    }
+  });
+
 });
