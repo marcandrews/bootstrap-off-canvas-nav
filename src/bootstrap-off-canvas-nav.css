@@ -22,48 +22,27 @@
     backface-visibility: hidden;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    -webkit-transition-property: left, right, -webkit-transform;
-    transition-property: left, right, transform;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: transform;
     -webkit-transition-delay: 0s;
     transition-delay: 0s;
   }
 
   body.out {
-    left: -300px;
-    right: 300px;
+    -webkit-transform: translate3d(-300px,0,0);
+    transform: translate3d(-300px,0,0);
     overflow: hidden;
   }
 
   body.off-canvas-nav-left.out {
-    left: 300px;
-    right: -300px;
+    -webkit-transform: translate3d(300px,0,0);
+    transform: translate3d(300px,0,0);
   }
 
   .container-fluid>.navbar-collapse,
   .container>.navbar-collapse {
     margin-left: 0;
     margin-right: 0;
-  }
-
-  nav.navbar-fixed-top {
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition-property: left, right, -webkit-transform;
-    transition-property: left, right, transform;
-    -webkit-transition-delay: 0s;
-    transition-delay: 0s;
-  }
-
-  nav.navbar-fixed-top.out {
-    -webkit-transform: translate3d(-300px,0,0);
-    transform: translate3d(-300px,0,0);
-  }
-
-  body.off-canvas-nav-left nav.navbar-fixed-top.out {
-    -webkit-transform: translate3d(300px,0,0);
-    transform: translate3d(300px,0,0);
-    -webkit-transition-delay: 0.15s;
-    transition-delay: 0.15s;
   }
 
   nav .navbar-nav {
@@ -110,7 +89,7 @@
     width: 300px;
     height: 100vh !important;
     margin: 0;
-    background-color: #fff;
+    background-color: inherit;
     border: none;
     box-shadow: none;
     border-left: 1px solid #e7e7e7;
@@ -118,8 +97,8 @@
     filter: alpha(opacity=0);
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    -webkit-transition-property: left, right, opacity, -webkit-transform;
-    transition-property: left, right, opacity, transform;
+    -webkit-transition-property: opacity, -webkit-transform;
+    transition-property: opacity, transform;
   }
 
   body.out .navbar-collapse {
@@ -133,12 +112,9 @@
 
   body.out nav .navbar-collapse {
     box-shadow: -10px 0px 50px 0px rgba(0,0,0,0.75);
-    -webkit-transform: translate3d(-300px,0,0);
-    transform: translate3d(-300px,0,0);
   }
 
   nav.navbar-fixed-top .navbar-collapse {
-    right: -300px !important;
     max-height: none;
   }
 
@@ -158,8 +134,6 @@
 
   body.off-canvas-nav-left.out nav .navbar-collapse {
     box-shadow: 10px 0px 50px 0px rgba(0,0,0,0.75);
-    -webkit-transform: translate3d(300px,0,0);
-    transform: translate3d(300px,0,0);
   }
 
   body.off-canvas-nav-left.out nav.navbar-fixed-top .navbar-collapse {
@@ -216,6 +190,30 @@
     margin-bottom: 0;
     border: none;
     box-shadow: none;
+  }
+
+}
+
+
+@media (max-width: 375px) {
+
+  body.out {
+    -webkit-transform: translate3d(-100vw,0,0) translate3d(74px,0,0);
+    transform: translate3d(-100vw,0,0) translate3d(74px,0,0);
+  }
+
+  body.off-canvas-nav-left.out {
+    -webkit-transform: translate3d(100vw,0,0) translate3d(-74px,0,0);
+    transform: translate3d(100vw,0,0) translate3d(-74px,0,0);
+  }
+
+  nav .navbar-collapse {
+    right: calc((100vw - 74px) * -1);
+    width: calc(100vw - 74px);
+  }
+
+  body.off-canvas-nav-left nav .navbar-collapse {
+    left: calc((100vw - 74px) * -1);
   }
 
 }
